@@ -17,6 +17,9 @@ sudo parted /dev/sdb --script print
 <<'COMMENT'
 boot
 https://esgeeks.com/crear-usb-booteable-con-terminal-linux/
+visual
 COMMENT
 
 sudo dd bs=4M if=~/Descargas/linux.iso of=/dev/sdb conv=fdatasync
+
+sudo dd if=~/Descargas/ubuntu-17.10.1-desktop-amd64.iso | pv | sudo dd of=/dev/sdb bs=4M conv=fdatasync
